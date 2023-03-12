@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fe322e83-a4fa-4484-90a9-8241ef8acddb" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="flow-apiFlow" doc:id="8a4afc64-ab69-481a-834f-e521d934566d" >
+		<http:listener doc:name="Listener" doc:id="1791ba3a-ed54-4795-94dc-b2f3e5f0db92" config-ref="HTTP_Listener_config" path="sample"/>
+		<parse-template doc:name="Parse Template" doc:id="7a87512c-8d63-411c-a903-d8d69a8912d3" location="C:\Users\sushm\OneDrive\Desktop\parle.txt"/>
+	</flow>
+</mule>
